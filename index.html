@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MEDI4LAB | 메디컬 비즈니스 연구소</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 🔗 외부 CSS 연결 -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- LOGO -->
+        <a href="/" class="logo">
+          <img src="assets/logo-h.png" alt="Medi4Lab Logo" />
+        </a>
+
+        <!-- NAV -->
+        <nav class="nav">
+          <ul>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="#4Labs">4Labs</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="1.medi4lab.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-inner">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="hero-kicker">병원 성장의 문화를 만들다</span>
+            <span class="hero-main">메디컬 비즈니스 연구소, 메디포랩</span>
+          </h1>
+
+          <p class="hero-desc">
+            병원은 진료에, 우리는 성장에 집중합니다.<br />
+            메디포랩은 병원 운영·브랜딩·교육의 흐름을 연구하고<br />
+            현장에서 작동하는 성장 전략을 설계합니다.
+          </p>
+
+          <a href="/about.html" class="btn-primary hero-cta">
+            메디포랩 소개 보기 →
+          </a>
+        </div>
+      </div>
+      <div class="scroll-down">
+        <span></span>
+      </div>
+    </section>
+    <section class="m4l-labs" id="labs">
+      <!-- 상단 탭 -->
+      <div class="m4l-labs-tabs">
+        <button class="m4l-lab-tab is-active" data-lab="startup">
+          개원운영
+        </button>
+        <button class="m4l-lab-tab" data-lab="agency">에이전시</button>
+        <button class="m4l-lab-tab" data-lab="marketing">마케팅</button>
+        <button class="m4l-lab-tab" data-lab="education">전문교육</button>
+      </div>
+
+      <!-- 슬라이드 컨테이너 -->
+      <div class="m4l-labs-slides">
+        <!-- STARTUP LAB -->
+        <article class="m4l-lab-slide is-active" data-lab-panel="startup">
+          <div class="m4l-lab-media">
+            <img src="assets/lab-startup.jpg" alt="STARTUP LAB – 개원 전략" />
+          </div>
+          <div class="m4l-lab-content">
+            <p class="m4l-lab-kicker">병·의원 개원 전략 연구소</p>
+            <h2 class="m4l-lab-title">STARTUP LAB</h2>
+            <p class="m4l-lab-lead">
+              상권·시장 분석부터 내부 동선, 프로세스, 인력 구조까지<br />
+              병·의원 개원의 모든 요소를 데이터 기반으로 설계합니다.
+            </p>
+
+            <div class="m4l-lab-divider"></div>
+
+            <ul class="m4l-lab-points">
+              <li>개원 전략 기획 · 상권 분석</li>
+              <li>내부 동선·운영 프로세스 설계</li>
+              <li>조직 구조 및 역할 설계</li>
+              <li>브랜드 방향성 및 초기 마케팅 기획</li>
+            </ul>
+
+            <button class="m4l-lab-cta">STARTUP LAB 자세히 보기 →</button>
+          </div>
+        </article>
+
+        <!-- AGENCY LAB -->
+        <article class="m4l-lab-slide" data-lab-panel="agency">
+          <div class="m4l-lab-media">
+            <img src="assets/lab-agency.jpg" alt="AGENCY LAB – 운영·인력" />
+          </div>
+          <div class="m4l-lab-content">
+            <p class="m4l-lab-kicker">병원 운영·인력 연구소</p>
+            <h2 class="m4l-lab-title">AGENCY LAB</h2>
+            <p class="m4l-lab-lead">
+              간호사, 데스크, 상담·CS, 치료 인력까지<br />
+              병원 상황에 맞는 인력 구조와 운영 체계를 설계합니다.
+            </p>
+
+            <div class="m4l-lab-divider"></div>
+
+            <ul class="m4l-lab-points">
+              <li>직군별 인력 구성 및 채용 컨설팅</li>
+              <li>파트·정규직 운영 전략 및 스케줄 설계</li>
+              <li>업무 매뉴얼 및 현장 운영 지원</li>
+              <li>서비스 퀄리티 관리 및 운영 안정화</li>
+            </ul>
+
+            <button class="m4l-lab-cta">AGENCY LAB 자세히 보기 →</button>
+          </div>
+        </article>
+
+        <!-- MARKETING LAB -->
+        <article class="m4l-lab-slide" data-lab-panel="marketing">
+          <div class="m4l-lab-media">
+            <img
+              src="assets/lab-marketing.jpg"
+              alt="MARKETING LAB – 브랜딩·마케팅"
+            />
+          </div>
+          <div class="m4l-lab-content">
+            <p class="m4l-lab-kicker">병원 브랜딩·콘텐츠 연구소</p>
+            <h2 class="m4l-lab-title">MARKETING LAB</h2>
+            <p class="m4l-lab-lead">
+              병원의 강점을 스토리와 비주얼로 정리하고,<br />
+              온라인·오프라인 전체 터치포인트를 설계합니다.
+            </p>
+
+            <div class="m4l-lab-divider"></div>
+
+            <ul class="m4l-lab-points">
+              <li>브랜드 아이덴티티 · 콘셉트 기획</li>
+              <li>사진·영상·SNS·블로그 콘텐츠 제작</li>
+              <li>검색 · 리뷰 · 체험단 기반 캠페인 운영</li>
+              <li>온·오프라인 통합 마케팅 전략 수립</li>
+            </ul>
+
+            <button class="m4l-lab-cta">MARKETING LAB 자세히 보기 →</button>
+          </div>
+        </article>
+
+        <!-- EDUCATION LAB -->
+        <article class="m4l-lab-slide" data-lab-panel="education">
+          <div class="m4l-lab-media">
+            <img
+              src="assets/lab-education.jpg"
+              alt="EDUCATION LAB – 교육·역량 강화"
+            />
+          </div>
+          <div class="m4l-lab-content">
+            <p class="m4l-lab-kicker">의료 조직 전문 교육 연구소</p>
+            <h2 class="m4l-lab-title">EDUCATION LAB</h2>
+            <p class="m4l-lab-lead">
+              병원 운영 행정, 간호, 상담·CS, 재활·치료까지<br />
+              직군별 실무 중심 교육으로 내부 역량을 강화합니다.
+            </p>
+
+            <div class="m4l-lab-divider"></div>
+
+            <ul class="m4l-lab-points">
+              <li>병원 운영 행정 실무 교육</li>
+              <li>간호 실무 및 리더십 과정</li>
+              <li>상담·CS 커뮤니케이션 트레이닝</li>
+              <li>물리치료사 실무·케이스 기반 교육 프로그램</li>
+            </ul>
+
+            <button class="m4l-lab-cta">EDUCATION LAB 자세히 보기 →</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="m4l-process">
+      <!-- 섹션 라벨 + 메인 타이틀 + 서브텍스트 -->
+      <div class="m4l-process-head">
+        <p class="process-kicker">Process</p>
+        <h2 class="process-title">
+          메디포랩의 4개 연구소는 하나의 흐름으로 이어집니다.
+        </h2>
+        <p class="process-sub">
+          개원, 운영, 브랜딩, 교육은 따로 존재하지 않습니다.<br />
+          병원의 실제 성장에서는 네 흐름이 순환하며 연결됩니다.
+        </p>
+      </div>
+
+      <div class="m4l-process-inner">
+        <!-- 큰 점선 원 -->
+        <div class="process-orbit"></div>
+
+        <!-- 01 -->
+        <div class="process-node process-node--1 is-active">
+          <div class="process-node-inner">
+            <div class="process-node-index">01</div>
+            <h3 class="process-node-title">STARTUP LAB</h3>
+            <p class="process-node-desc">
+              개원 전략 및 구조 설계<br />
+              병원의 방향성과 운영 틀을 정리합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="process-node process-node--2">
+          <div class="process-node-inner">
+            <div class="process-node-index">02</div>
+            <h3 class="process-node-title">AGENCY LAB</h3>
+            <p class="process-node-desc">
+              인력 구성 &amp; 운영 안정화<br />
+              현장에서 돌아가는 시스템을 완성합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="process-node process-node--3">
+          <div class="process-node-inner">
+            <div class="process-node-index">03</div>
+            <h3 class="process-node-title">MARKETING LAB</h3>
+            <p class="process-node-desc">
+              브랜딩 &amp; 환자 경험 설계<br />
+              병원의 메시지를 시각화하고 확장합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="process-node process-node--4">
+          <div class="process-node-inner">
+            <div class="process-node-index">04</div>
+            <h3 class="process-node-title">EDUCATION LAB</h3>
+            <p class="process-node-desc">
+              내부 역량 강화 &amp; 성장 지속<br />
+              스스로 성장하는 병원 문화를 만듭니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="m4l-portfolio">
+      <div class="m4l-portfolio-inner">
+        <!-- 타이틀 + 화살표 -->
+        <div class="m4l-portfolio-head">
+          <div class="portfolio-title-row">
+            <h2 class="section-title">Portfolio</h2>
+
+            <!-- 🔥 타이틀 오른쪽 큰 화살표 -->
+            <div class="portfolio-nav">
+              <button
+                class="portfolio-arrow portfolio-arrow--prev is disabled"
+                type="button"
+                aria-label="이전"
+              >
+                <span class="arrow-icon"><</span>
+              </button>
+              <button
+                class="portfolio-arrow portfolio-arrow--next"
+                type="button"
+                aria-label="다음"
+              >
+                <span class="arrow-icon">></span>
+              </button>
+            </div>
+          </div>
+
+          <p class="section-sub">메디포랩과 함께 개원한 병·의원 사례</p>
+        </div>
+
+        <!-- 슬라이더 -->
+        <div class="m4l-portfolio-slider">
+          <!-- 실제 트랙: 탭+카드 세트가 가로로 나열 -->
+          <div class="portfolio-track">
+            <!-- 01 -->
+            <article class="portfolio-item">
+              <button class="portfolio-tab" type="button">
+                <span class="portfolio-tab-index">01</span>
+                <span class="portfolio-tab-line"></span>
+                <span class="portfolio-tab-label">서울 정형외과</span>
+              </button>
+
+              <div class="portfolio-card">
+                <div class="portfolio-card-media">
+                  <img src="assets/portfolio/01.jpg" alt="서울 정형외과" />
+                </div>
+                <div class="portfolio-card-overlay">
+                  <p class="portfolio-card-kicker">
+                    개원운영 · 마케팅 · 전문교육
+                  </p>
+                  <p class="portfolio-card-title">서울 정형외과</p>
+                  <p class="portfolio-card-desc">
+                    개원 전략부터 마케팅, 내부 인력 교육까지<br />
+                    메디포랩과 함께하고 있습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 02 -->
+            <article class="portfolio-item">
+              <button class="portfolio-tab" type="button">
+                <span class="portfolio-tab-index">02</span>
+                <span class="portfolio-tab-line"></span>
+                <span class="portfolio-tab-label">대구 통증의학과</span>
+              </button>
+
+              <div class="portfolio-card">
+                <div class="portfolio-card-media">
+                  <img src="assets/portfolio/02.jpg" alt="대구 통증의학과" />
+                </div>
+                <div class="portfolio-card-overlay">
+                  <p class="portfolio-card-kicker">
+                    개원운영 · 에이전시 · 전문교육
+                  </p>
+                  <p class="portfolio-card-title">대구 통증의학과</p>
+                  <p class="portfolio-card-desc">
+                    지역 상권 분석 기반의 개원 전략과<br />
+                    재방문을 고려한 환자 경험 동선을 설계했습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 03 -->
+            <article class="portfolio-item">
+              <button class="portfolio-tab" type="button">
+                <span class="portfolio-tab-index">03</span>
+                <span class="portfolio-tab-line"></span>
+                <span class="portfolio-tab-label">대구 일반외과</span>
+              </button>
+
+              <div class="portfolio-card">
+                <div class="portfolio-card-media">
+                  <img src="assets/portfolio/03.jpg" alt="대구 일반외과" />
+                </div>
+                <div class="portfolio-card-overlay">
+                  <p class="portfolio-card-kicker">
+                    개원운영 · 에이전시 · 전문교육
+                  </p>
+                  <p class="portfolio-card-title">대구 일반외과</p>
+                  <p class="portfolio-card-desc">
+                    지역 상권 분석 기반의 개원 전략과<br />
+                    그에 맞는 진료와 치료 프로그램을 설계했습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 04 -->
+            <article class="portfolio-item">
+              <button class="portfolio-tab" type="button">
+                <span class="portfolio-tab-index">04</span>
+                <span class="portfolio-tab-line"></span>
+                <span class="portfolio-tab-label">대구 필라테스 센터</span>
+              </button>
+
+              <div class="portfolio-card">
+                <div class="portfolio-card-media">
+                  <img src="assets/portfolio/04.jpg" alt="대구 필라테스 센터" />
+                </div>
+                <div class="portfolio-card-overlay">
+                  <p class="portfolio-card-kicker">
+                    개원운영 · 마케팅 · 전문교육
+                  </p>
+                  <p class="portfolio-card-title">대구 필라테스 센터</p>
+                  <p class="portfolio-card-desc">
+                    필라테스 센터 특성에 맞는 동선과<br />
+                    상담·치료실 운영 구조를 설계했습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 05 -->
+            <article class="portfolio-item">
+              <button class="portfolio-tab" type="button">
+                <span class="portfolio-tab-index">05</span>
+                <span class="portfolio-tab-line"></span>
+                <span class="portfolio-tab-label">대구 유방외과</span>
+              </button>
+              <div class="portfolio-card">
+                <div class="portfolio-card-media">
+                  <img src="assets/portfolio/05.jpg" alt="대구 유방외과" />
+                </div>
+                <div class="portfolio-card-overlay">
+                  <p class="portfolio-card-kicker">개원운영</p>
+                  <p class="portfolio-card-title">대구 유방외과</p>
+                  <p class="portfolio-card-desc">
+                    수술/외래 구분이 명확한 구조 설계와<br />
+                    의료진 동선을 최소화하는 운영 구조를 만들었습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 06 -->
+            <article class="portfolio-item">
+              <button class="portfolio-tab" type="button">
+                <span class="portfolio-tab-index">06</span>
+                <span class="portfolio-tab-line"></span>
+                <span class="portfolio-tab-label">대구 신경외과</span>
+              </button>
+              <div class="portfolio-card">
+                <div class="portfolio-card-media">
+                  <img src="assets/portfolio/06.jpg" alt="대구 신경외과" />
+                </div>
+                <div class="portfolio-card-overlay">
+                  <p class="portfolio-card-kicker">개원운영 · 마케팅</p>
+                  <p class="portfolio-card-title">대구 중구 유방외과</p>
+                  <p class="portfolio-card-desc">
+                    지역 상권 분석 기반의 개원 전략과<br />
+                    재방문을 고려한 환자 경험 동선을 설계했습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- 07 -->
+            <article class="portfolio-item">
+              <button class="portfolio-tab" type="button">
+                <span class="portfolio-tab-index">07</span>
+                <span class="portfolio-tab-line"></span>
+                <span class="portfolio-tab-label">대구 통증의학과</span>
+              </button>
+              <div class="portfolio-card">
+                <div class="portfolio-card-media">
+                  <img src="assets/portfolio/07.jpg" alt="대구 통증의학과" />
+                </div>
+                <div class="portfolio-card-overlay">
+                  <p class="portfolio-card-kicker">
+                    개원운영 · 에이전시 · 전문교육
+                  </p>
+                  <p class="portfolio-card-title">대구 통증의학과</p>
+                  <p class="portfolio-card-desc">
+                    지역 상권 분석 기반의 개원 전략과<br />
+                    재방문을 고려한 환자 경험 동선을 설계했습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR CLIENTS -->
+    <!-- CLIENTS -->
+    <section id="clients" class="m4l-clients" aria-label="우리가 함께한 병원들">
+      <div class="m4l-clients-inner">
+        <header class="m4l-clients-head">
+          <h2 class="section-title">Our Clients</h2>
+          <p class="section-sub">
+            메디포랩과 함께 성장하고 있는 병원과 센터들입니다.<br />
+            각 지역·진료과 특성에 맞는 전략으로 새로운 의료 문화를 만들어가고
+            있습니다.
+          </p>
+        </header>
+        <div class="m4l-clients-logos"></div>
+        <!-- Row 1 -->
+        <div
+          class="clients-marquee clients-marquee--1"
+          aria-label="클라이언트 로고 리스트 1"
+        >
+          <div class="clients-marquee-track">
+            <span class="clients-logo">
+              <img
+                src="assets/clients/1.logo_zenith.png"
+                alt="제니스정형외과"
+              />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/2.logo_zenithos.png" alt="제니스OS" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/3.logo_uhan.png" alt="우한의원" />
+            </span>
+            <span class="clients-logo">
+              <img
+                src="assets/clients/4.logo_popeye.png"
+                alt="뽀빠이정형외과"
+              />
+            </span>
+            <span class="clients-logo">
+              <img
+                src="assets/clients/5.logo_leaders.png"
+                alt="리더스정형외과"
+              />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/6.logo_lyc.jpg" alt="LYC" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/7.logo_21c.png" alt="21c병원" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/8.logo_knp.png" alt="KNP 병원" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/9.logo_happy.png" alt="해피병원" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/10.logo_aneul.png" alt="아늘의원" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/11.logo_roseu.png" alt="로즈병원" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/12.logo_thera.png" alt="테라의원" />
+            </span>
+
+            <!-- loop duplicate (연속 자연스럽게) -->
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/1.logo_zenith.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/2.logo_zenithos.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/3.logo_uhan.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/4.logo_popeye.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/5.logo_leaders.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/6.logo_lyc.jpg" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/7.logo_21c.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/8.logo_knp.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/9.logo_happy.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/10.logo_aneul.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/11.logo_roseu.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/12.logo_thera.png" alt="" />
+            </span>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div
+          class="clients-marquee clients-marquee--2"
+          aria-label="클라이언트 로고 리스트 2"
+        >
+          <div class="clients-marquee-track">
+            <span class="clients-logo">
+              <img src="assets/clients/13.logo_metro.png" alt="메트로병원" />
+            </span>
+            <span class="clients-logo">
+              <img
+                src="assets/clients/14.logo_kyungdaetop.png"
+                alt="경대탑정형외과"
+              />
+            </span>
+            <span class="clients-logo">
+              <img
+                src="assets/clients/15.logo_chamdeun.png"
+                alt="참든정형외과"
+              />
+            </span>
+            <span class="clients-logo">
+              <img
+                src="assets/clients/16.logo_daeyoung.png"
+                alt="대영정형외과"
+              />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/17.logo_onemadi.png" alt="원메디의원" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/18.logo_oneteam.png" alt="원팀의원" />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/19.logo_sbone.png" alt="에스본병원" />
+            </span>
+            <span class="clients-logo">
+              <img
+                src="assets/clients/20.logo_onepain.png"
+                alt="원통증의학과"
+              />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/21.logo_s.png" alt="에스병원" />
+            </span>
+            <span class="clients-logo">
+              <img
+                src="assets/clients/22.logo_today.png"
+                alt="투데이정형외과"
+              />
+            </span>
+            <span class="clients-logo">
+              <img src="assets/clients/23.logo_cham.png" alt="참정형외과" />
+            </span>
+
+            <!-- loop duplicate -->
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/13.logo_metro.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/14.logo_kyungdaetop.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/15.logo_chamdeun.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/16.logo_daeyoung.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/17.logo_onemadi.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/18.logo_oneteam.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/19.logo_sbone.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/20.logo_onepain.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/21.logo_s.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/22.logo_today.png" alt="" />
+            </span>
+            <span class="clients-logo" aria-hidden="true">
+              <img src="assets/clients/23.logo_cham.png" alt="" />
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="panel section m4l-contact">
+      <div class="m4l-contact-inner">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">
+          간단한 정보를 남겨주시면, 메디포랩이 병원의 상황에 맞는 방향을 함께
+          설계해드립니다.
+        </p>
+
+        <div class="contact-layout">
+          <!-- 좌측 텍스트 -->
+          <div class="contact-text">
+            <p>
+              병원 운영, 인력, 마케팅, 교육에 대한 고민이 있다면<br />
+              언제든지 메디포랩에 문의해주세요.
+            </p>
+          </div>
+
+          <!-- 🔥 우측 전체 덩어리 (탭 + 폼) -->
+          <div class="contact-right">
+            <label class="contact-question"
+              >문의하실 분야를 선택해주세요.</label
+            >
+
+            <div class="contact-tabs">
+              <button type="button" class="contact-tab active">
+                STARTUP LAB
+              </button>
+              <button type="button" class="contact-tab">AGENCY LAB</button>
+              <button type="button" class="contact-tab">MARKETING LAB</button>
+              <button type="button" class="contact-tab">EDUCATION LAB</button>
+            </div>
+
+            <form class="contact-form">
+              <label for="name">성함</label>
+              <input id="name" type="text" />
+
+              <label for="hospital">병원명</label>
+              <input id="hospital" type="text" />
+
+              <label for="phone">연락처</label>
+              <input id="phone" type="tel" />
+
+              <label for="email">이메일</label>
+              <input id="email" type="email" />
+
+              <label for="message">문의 내용</label>
+              <textarea id="message"></textarea>
+
+              <button type="submit" class="btn-primary">문의 보내기</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">MEDI4LAB © 2025. All rights reserved.</div>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1546 @@
+/* =========================
+   Base / Reset / Variables
+   ========================= */
+:root {
+  --bg-main: #0f1114;
+  --fg-main: #ffffff;
+  --fg-muted: #bfc4c9;
+  --accent: #ff6a3d;
+  --container-width: 1160px;
+
+  --font-heading: "Poppins", "Pretendard", sans-serif;
+  --font-body: "Pretendard", sans-serif;
+
+  --fz-h1: 64px;
+  --fz-h2: 40px;
+  --fz-h3: 22px;
+
+  --fz-body-lg: 18px;
+  --fz-body: 17px;
+  --fz-body-sm: 15px;
+
+  --lh-heading: 1.22;
+  --lh-body: 1.65;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--fg-main);
+  font-family: var(--font-body);
+  font-size: var(--fz-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* hero 빼고 나머지 section 여백 */
+section:not(.hero) {
+  padding: 120px 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 24px;
+}
+
+p {
+  font-size: var(--fz-body);
+  color: var(--fg-muted);
+  line-height: var(--lh-body);
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  display: inline-block;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: var(--fz-body-sm);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 28px;
+  margin-top: 24px;
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.header-inner {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 28px;
+  display: block;
+  /* 검정 로고를 흰색처럼 보이게 */
+  filter: brightness(0) invert(1);
+}
+
+.nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav ul li a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+  transition: opacity 0.25s;
+}
+
+.nav ul li a:hover {
+  opacity: 0.45;
+}
+
+/* ==============================
+   HERO (풀스크린 영상 + 텍스트)
+   ============================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.9)
+  );
+  z-index: -1;
+}
+
+.hero-inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-width);
+  padding: 0 24px;
+}
+
+.hero-content {
+  max-width: 820px;
+  margin-top: 60px; /* 텍스트 덩어리 전체를 조금 아래로 */
+}
+
+/* 타이틀 + 효과 */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: var(--fz-h1);
+  line-height: var(--lh-heading);
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: -0.03em;
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.85);
+}
+
+.hero-title span {
+  display: block;
+}
+
+/* 상단 한 줄 문구 */
+.hero-kicker {
+  font-size: 30px; /* 킥커 크기 */
+  color: #ffffff; /* 킥커 색상 */
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+/* 메인 타이틀 */
+.hero-main {
+  font-size: 48px; /* 메인 타이틀 더 크게 */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.hero-desc {
+  font-size: var(--fz-body-lg);
+  line-height: 1.7;
+  color: var(--fg-muted);
+  margin-bottom: 36px;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.85);
+}
+
+.hero-cta {
+  font-size: 16px;
+  padding: 16px 36px;
+  border-radius: 999px;
+}
+
+/* 한 줄씩 페이드인 (속도 느리게 1.5s) */
+.hero-kicker,
+.hero-main,
+.hero-desc,
+.hero-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpLine 1.5s ease forwards;
+}
+
+.hero-kicker {
+  animation-delay: 0.1s;
+}
+.hero-main {
+  animation-delay: 0.4s;
+}
+.hero-desc {
+  animation-delay: 0.8s;
+}
+.hero-cta {
+  animation-delay: 2s;
+}
+
+@keyframes fadeUpLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 스크롤 다운 인디케이터 (조금 더 아래) */
+.scroll-down {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-down span {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+}
+
+.scroll-down span::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: scroll 1.4s infinite ease;
+  opacity: 0.9;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(-50%, 14px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.9;
+  }
+}
+
+/* ==============================
+   LABS / PROCESS / CARDS / ETC
+   ============================== */
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: var(--fz-h2);
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.28;
+}
+
+.section-sub {
+  font-size: var(--fz-body-lg);
+  color: var(--fg-muted);
+  margin-bottom: 56px;
+  line-height: var(--lh-body);
+}
+
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.lab-card h3,
+.card h3,
+.news-item h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fz-h3);
+  font-weight: 600;
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.lab-card ul {
+  margin-top: 8px;
+  padding-left: 16px;
+  font-size: var(--fz-body-sm);
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.process-step {
+  padding: 24px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--fz-body-sm);
+}
+
+.process-step strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-size: var(--fz-body);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  font-size: var(--fz-body-sm);
+}
+
+.clients-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.client-logo {
+  width: 120px;
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.news-item time {
+  display: block;
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-bottom: 4px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1.8fr;
+  gap: 40px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: var(--fz-body-sm);
+  margin-bottom: 4px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: #fff;
+  font-size: var(--fz-body-sm);
+  margin-bottom: 16px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+footer {
+  padding: 40px 0;
+  font-size: 12px;
+  color: var(--fg-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+}
+
+/* ===========================
+   MEDI4LAB LABS – Full Hero
+   =========================== */
+
+.m4l-labs {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* 화면 꽉 채움 */
+  background: #000;
+  color: #f9fafb;
+  overflow: hidden;
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* 상단 탭 영역 */
+.m4l-labs-tabs {
+  position: absolute;
+  top: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  gap: 16px;
+  z-index: 5;
+}
+
+.m4l-lab-tab {
+  min-width: 140px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(14px);
+  color: #e5e7eb;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease,
+    transform 0.18s ease;
+}
+
+.m4l-lab-tab:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.m4l-lab-tab.is-active {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #111827; /* 글자 검정 */
+}
+
+/* 슬라이드 컨테이너 */
+.m4l-labs-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px; /* 또는 원하는 너비 */
+  margin: 0 auto; /* ⭐ 가운데 정렬 핵심 */
+  position: relative; /* 기존 애니메이션 깨지지 않게 */
+  padding-top: 120px; /* 원하는 만큼 조정 가능 (60~120 추천) */
+}
+
+/* 개별 LAB 패널 (한 덩어리) */
+.m4l-lab-slide {
+  position: absolute;
+  top: 50px; /* ← 탭 아래로 내리는 값 (원하면 120 / 160 등으로 조정 가능) */
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.m4l-lab-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* 좌측 40% – 이미지/영상 */
+.m4l-lab-media {
+  flex: 0 0 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.m4l-lab-media img,
+.m4l-lab-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 우측 60% – 텍스트 패널 */
+.m4l-lab-content {
+  flex: 0 0 50%;
+  padding: 160px 140px 120px 96px;
+  padding-bottom: 120px;
+  background: #050608; /* 여기로 빼주면 됨 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.m4l-lab-kicker {
+  font-size: 14px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(249, 250, 251, 0.6);
+  margin: 0 0 10px;
+  margin-bottom: 2px;
+}
+
+.m4l-lab-title {
+  font-size: 44px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin: 0 0 24px;
+  margin-bottom: 10px;
+}
+
+.m4l-lab-lead {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(249, 250, 251, 0.82);
+  margin: 0 0 32px;
+}
+
+.m4l-lab-divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(249, 115, 22, 0),
+    #f97316,
+    rgba(249, 115, 22, 0)
+  );
+  margin: 36px 0;
+}
+
+.m4l-lab-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  font-size: 18px;
+  line-height: 2.5;
+  margin-bottom: 48px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.m4l-lab-points li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 6px;
+}
+
+.m4l-lab-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f97316;
+}
+
+/* CTA 버튼 */
+.m4l-lab-cta {
+  align-self: flex-start;
+  padding: 12px 26px;
+  margin-top: 40px;
+  border-radius: 999px;
+  border: 1px solid #f97316;
+  background: #f97316;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.m4l-lab-cta:hover {
+  background: transparent;
+  color: #f97316;
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.6);
+  transform: translateY(-1px);
+}
+
+/* 반응형 – 1024 이하에서 비율 조정 + 스택 구조 */
+@media (max-width: 1200px) {
+  .m4l-lab-content {
+    padding: 140px 80px 80px 72px;
+  }
+}
+
+@media (max-width: 960px) {
+  .m4l-lab-slide {
+    flex-direction: column;
+  }
+
+  .m4l-lab-media,
+  .m4l-lab-content {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .m4l-lab-media {
+    height: 45vh;
+  }
+
+  .m4l-lab-content {
+    padding: 80px 24px 56px;
+  }
+
+  .m4l-labs-tabs {
+    top: 72px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .m4l-lab-title {
+    font-size: 32px;
+  }
+
+  .m4l-lab-lead {
+    font-size: 15px;
+  }
+
+  .m4l-lab-tabs {
+    padding: 0 12px;
+  }
+
+  .m4l-lab-tab {
+    min-width: auto;
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
+
+/* 공통 색상 */
+:root {
+  --accent: #ff6a3d;
+}
+
+/* =========================
+   PROCESS SECTION
+   ========================= */
+
+/* 섹션 전체 – 높이/잘림/배경 */
+.m4l-process {
+  position: relative;
+  padding: 260px 0 800px; /* 위 살짝 줄이고, 아래도 약간 줄여서 포트폴리오와 간격 확보 */
+  background: #000;
+  color: #fff;
+  overflow: visible; /* 섹션 밖으로 튀어나오는 부분은 잘라줌 */
+}
+
+/* 상단 라벨 + 타이틀 + 서브텍스트 */
+.m4l-process-head {
+  max-width: 820px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+/* 공통 애니메이션 (hero에서 쓰던 fadeUpLine 재사용) */
+.process-kicker,
+.process-title,
+.process-sub {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpLine 1.2s ease forwards;
+}
+
+/* 라벨 */
+.process-kicker {
+  animation-delay: 0.1s;
+  font-size: 24px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+}
+
+/* 메인 타이틀 */
+.process-title {
+  animation-delay: 0.35s;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* 서브 텍스트 */
+.process-sub {
+  animation-delay: 0.65s;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* 안쪽 랩 – 큰 원+4개 원 전체 영역 */
+.m4l-process-inner {
+  position: relative;
+  max-width: 1500px; /* 화면 가운데 정렬 기준 */
+  margin: 0 auto;
+  height: 800px; /* 높이 조금 줄여서 전체가 위로 올라오도록 */
+}
+
+/* 큰 점선 원 */
+.process-orbit {
+  position: absolute;
+  left: 50%;
+  top: -400px; /* 기존 값 그대로 사용 */
+  width: 1200px;
+  height: 1200px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.45);
+  opacity: 0.9;
+}
+
+/* 점선 원을 따라 도는 포인트 */
+.process-orbit::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  pointer-events: none;
+
+  /* 반지름 600px = 원 크기(1200px)의 절반 */
+  box-shadow: 0 -600px 0 0 #ffffff,
+    /* 하얀 중심점 */ 0 -600px 0 4px rgba(255, 255, 255, 0.9),
+    /* 주황 테두리 */ 0 -600px 20px 10px rgba(255, 106, 61, 0.55); /* 주황 글로우 */
+
+  animation: m4l-orbit-dot 24s linear infinite;
+}
+
+@keyframes m4l-orbit-dot {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* 공통 노드(동그라미 카드) */
+.process-node {
+  position: absolute;
+  width: 450px; /* 살짝 줄여서 4개가 딱 맞게 */
+  height: 450px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 네 개 원의 "중심"을 정렬하기 위한 기준값 */
+  top: 30%; /* ▶ 더 위로 올리고 싶으면 56~57% 정도로 줄여보기 */
+  transform: translate(-50%, -50%);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* 네 개 원 위치 – 중심을 20 / 40 / 60 / 80% 로 두면 수평 + 가운데 정렬 */
+.process-node--1 {
+  left: 12%;
+}
+.process-node--2 {
+  left: 37%;
+}
+.process-node--3 {
+  left: 62%;
+}
+.process-node--4 {
+  left: 87%;
+}
+
+/* 원 안 텍스트 레이아웃 */
+.process-node-inner {
+  text-align: left;
+  max-width: 230px;
+}
+
+/* 번호 */
+.process-node-index {
+  font-size: 14px;
+  letter-spacing: 0.16em;
+  opacity: 0.75;
+  margin-bottom: 10px;
+}
+
+/* 큰 타이틀 */
+.process-node-title {
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+/* 설명 */
+.process-node-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 활성 상태 하이라이트 (JS에서 .is-active 토글) */
+.process-node.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 40px rgba(255, 106, 61, 0.45);
+  transform: translate(-50%, -54%); /* 기준 위치에서만 살짝 위로 튀어 오르게 */
+}
+
+/* =========================
+   PORTFOLIO SECTION
+   ========================= */
+
+.m4l-portfolio {
+  background: #ffffff;
+  color: #111827;
+  padding: 120px 0 160px;
+}
+
+/* process 섹션과 비슷한 내부 폭 */
+.m4l-portfolio-inner {
+  max-width: 1400px; /* 카드 크기 유지 */
+  margin-left: 120px; /* 화면 왼쪽에서 떨어지는 거리 */
+  margin-right: 0; /* 오른쪽은 남는 대로 */
+  padding: 0; /* 안쪽 여백은 카드 기준으로 */
+}
+
+.m4l-portfolio-head {
+  margin-bottom: 40px;
+}
+
+/* 제목 + 화살표 한 줄 정렬 */
+.m4l-portfolio-head-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.m4l-portfolio-head .section-title {
+  font-size: 50px;
+  margin-bottom: 0; /* 아래 여백은 헤더 전체에서 관리 */
+  color: #111827;
+}
+
+.m4l-portfolio-head .section-sub {
+  font-size: 16px;
+  color: #9ca3af;
+  margin-top: 16px;
+}
+
+/* ===== 탭 라인 ===== */
+
+.m4l-portfolio-slider {
+  position: relative;
+  overflow: visible; /* 트랙이 더 길어도 화면은 가운데 정렬 유지 */
+}
+
+.portfolio-track {
+  display: flex;
+  gap: 32px;
+  transition: transform 0.5s ease;
+}
+
+/* 카드 하나(탭 + 이미지) 묶음 */
+.portfolio-item {
+  flex: 0 0 calc((100% - 32px * 3) / 4);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* ← 왼쪽 정렬 대신 전체 폭 사용 */
+}
+
+/* 탭: 숫자 + 라인 + 텍스트 */
+.portfolio-tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end; /* ← 오른쪽 끝으로 붙이기 */
+  width: 100%; /* 카드 너비 전체 사용 */
+
+  gap: 14px;
+  font-size: 20px;
+  color: #000000;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  white-space: nowrap;
+
+  margin-left: 0; /* ← 기존 40px 제거 */
+  margin-bottom: 18px;
+}
+
+.portfolio-tab-index {
+  font-size: 16px; /* 숫자 01 크기 */
+  font-weight: 600;
+}
+
+.portfolio-tab-line {
+  width: 140px;
+  height: 2px;
+  background: #ff8411;
+}
+
+.portfolio-tab-label {
+  font-size: 16px; /* 병원 이름 폰트 크기 */
+  font-weight: 500;
+}
+
+/* ===== 카드 ===== */
+
+.portfolio-card {
+  position: relative;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0; /* 🔥 모서리 라운드 제거 */
+}
+
+/* 이미지 영역 – 비율 고정 */
+.portfolio-card-media {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* 세로가 긴 사진이니 3:4 정도 */
+  overflow: hidden;
+  background: #000;
+}
+
+.portfolio-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* hover 오버레이 (원래 쓰던 스타일 유지) */
+.portfolio-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(255, 255, 255, 0.1)
+  );
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.portfolio-card:hover .portfolio-card-overlay {
+  opacity: 1;
+}
+/* 오버레이 텍스트 스타일 */
+.portfolio-card-kicker {
+  font-size: 24px;
+  font-weight: 700; /* 더 진하게 */
+  color: rgba(255, 255, 255, 0.95); /* 거의 흰색 */
+  margin-bottom: 20px;
+}
+
+/* 타이틀 숨기기 */
+.portfolio-card-title {
+  display: none;
+}
+
+/* 설명 텍스트 – 작고 흰색 */
+.portfolio-card-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Portfolio 제목 옆 네비게이션 */
+/* Portfolio 제목 + 화살표 한 줄 정렬 */
+.portfolio-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 4px;
+  gap: 24px; /* ← 제목과 버튼 사이 적당히 붙여주기 */
+}
+
+/* 화살표 영역 */
+.portfolio-nav {
+  display: flex;
+  gap: 0;
+}
+
+/* 버튼 박스 스타일 */
+.portfolio-arrow {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ccc;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.portfolio-arrow:hover {
+  background: #f5f5f5;
+}
+
+/* 화살표 아이콘 */
+.arrow-icon {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* 반응형 (대략) */
+@media (max-width: 1024px) {
+  .portfolio-item {
+    flex: 0 0 calc((100% - 32px) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-item {
+    flex: 0 0 100%;
+  }
+
+  .portfolio-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* ✅ 포트폴리오 카드 이미지 세로 길이 강제 통일 */
+.m4l-portfolio .portfolio-card-media {
+  width: 100%;
+  height: 520px; /* 👉 원하는 높이로 조절 (480~540px 정도 추천) */
+  overflow: hidden;
+}
+
+.m4l-portfolio .portfolio-card-media img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+}
+
+/* =========================
+   CLIENTS SECTION
+   ========================= */
+
+/* CLIENTS 섹션 전체 */
+.m4l-clients {
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start; /* 🔥 화면 위쪽부터 시작 */
+  padding: 100px 0 120px;
+  background: #ffffff; /* 완전 화이트 */
+  color: #111827;
+}
+
+/* 안쪽 컨테이너: 좌측 정렬 + 세로 가운데 정렬 */
+.m4l-clients-inner {
+  max-width: 1400px;
+  margin: 0 auto; /* 🔥 가로 중앙정렬 */
+  padding: 0 32px; /* 좌우 여백 살짝 */
+  text-align: center; /* 제목/설명/로고 전체를 가운데 정렬 */
+}
+
+/* 제목 영역 */
+.clients-head {
+  text-align: center;
+  margin-bottom: 80px; /* 기존보다 더 넓힘 */
+}
+
+.m4l-clients-head .section-title {
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.m4l-clients-head .section-sub {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* 로고 전체 영역 */
+.m4l-clients-logos {
+  margin-top: 8; /* 위에서 flex로 잡았으니 따로 띄우지 않기 */
+
+  /* 아래쪽 분위기만 살짝 띄우는 고급 느낌 */
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.05));
+}
+/* ========== 로고 마키 ========== */
+
+.clients-marquee {
+  --gap: 64px;
+  --speed: 20s;
+  overflow: hidden;
+  margin: 50px 0;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+
+.clients-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap);
+  width: max-content;
+  animation: clients-marquee var(--speed) linear infinite;
+}
+
+.clients-marquee--2 .clients-marquee-track {
+  animation-direction: reverse;
+}
+
+@keyframes clients-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========== 로고 박스 비율 고정 ========== */
+
+.clients-logo {
+  width: 210px;
+  height: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 20px; /* 로고 사이 간격 */
+}
+
+.clients-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.clients-logo img:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .m4l-clients-inner {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .clients-logo {
+    width: 100px;
+    height: 42px;
+  }
+
+  .clients-marquee {
+    --gap: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-marquee-track {
+    animation: none;
+  }
+}
+
+/* CONTACT SECTION */
+/* CONTACT 섹션 기본 */
+.m4l-contact {
+  background: #050505;
+  color: #f9fafb;
+  padding: 120px 0 160px;
+}
+
+/* 🔥 포트폴리오랑 동일한 가로 폭 & 좌측 여백 */
+.m4l-contact-inner {
+  max-width: 1400px;
+  margin-left: 120px; /* Portfolio, Clients랑 동일 */
+  margin-right: 0;
+  padding: 0;
+}
+
+/* 좌/우 컬럼 비율 – 포트폴리오 비율에 맞춰서 */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 8fr 0fr; /* 필요하면 숫자만 살짝 조정 */
+  gap: 80px;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+/* 우측 블록 살짝 위로 */
+.contact-right {
+  margin-top: -80px; /* “간단한 정보를 남겨주시면~” 줄과 탭 상단이 수평이 되도록 숫자만 미세 조정 */
+}
+
+/* "문의하실 분야를 선택해주세요." 라벨 – 성함 라벨과 동일 스타일 */
+.contact-question {
+  display: block;
+  font-size: 14px;
+  color: #e5e7eb;
+  margin-bottom: 10px;
+}
+
+/* 탭 줄 */
+.contact-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* 기본 탭 상태: 테두리/텍스트 흰색, 배경 검정 */
+.contact-tab {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  background: #000000;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* 🔥 클릭(선택)된 탭: 주황 배경 + 흰 텍스트 */
+.contact-tab.active {
+  background: #f97316;
+  border-color: #f97316;
+  color: #ffffff;
+}
+
+/* 작은 화면에서는 줄 바꿈 */
+@media (max-width: 640px) {
+  .contact-service-tabs {
+    gap: 10px;
+  }
+
+  .contact-tab {
+    min-width: 130px;
+    font-size: 12px;
+    padding: 9px 18px;
+  }
+}
+
+/* Contact 섹션 안의 문의 보내기 버튼 스타일 */
+.m4l-contact .btn-primary {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 12px 26px;
+  margin-top: 40px;
+  border-radius: 999px;
+  border: 1px solid #f97316;
+  background: #f97316;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+/* 화살표 살짝 여유 주고 싶으면 (선택사항) */
+.m4l-contact .btn-primary::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 6px;
+}
+
+/* 호버 효과 */
+.m4l-contact .btn-primary:hover {
+  background: transparent;
+  color: #f97316;
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.6);
+}
+
+/* =========================
+   공통 리빌 애니메이션
+   ========================= */
+
+/* 기본 상태: 안 보이는 상태 (스크롤 밖) */
+.reveal,
+.reveal-up,
+.reveal-down,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* 방향별 시작 위치 조정 */
+.reveal-up {
+  transform: translate3d(0, 24px, 0);
+}
+.reveal-down {
+  transform: translate3d(0, -24px, 0);
+}
+.reveal-left {
+  transform: translate3d(-32px, 0, 0);
+}
+.reveal-right {
+  transform: translate3d(32px, 0, 0);
+}
+.reveal-scale {
+  transform: scale(0.94);
+}
+
+/* 화면에 들어왔을 때 */
+.is-visible.reveal,
+.is-visible.reveal-up,
+.is-visible.reveal-down,
+.is-visible.reveal-left,
+.is-visible.reveal-right,
+.is-visible.reveal-scale {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* 스태거용: 형제 순서별 딜레이 */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-stagger.is-visible > * {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.reveal-stagger.is-visible > *:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.reveal-stagger.is-visible > *:nth-child(2) {
+  transition-delay: 0.12s;
+}
+.reveal-stagger.is-visible > *:nth-child(3) {
+  transition-delay: 0.19s;
+}
+.reveal-stagger.is-visible > *:nth-child(4) {
+  transition-delay: 0.26s;
+}
+.reveal-stagger.is-visible > *:nth-child(5) {
+  transition-delay: 0.33s;
+}
+
+/* =========================
+   섹션 리빌 공통 베이스
+   ========================= */
+
+/* 공통: 처음에는 살짝 아래 + 투명 */
+.hero .hero-content,
+.hero .scroll-down,
+.m4l-labs .m4l-labs-tabs,
+.m4l-labs .m4l-lab-slide.is-active .m4l-lab-media,
+.m4l-labs .m4l-lab-slide.is-active .m4l-lab-content,
+.m4l-process .m4l-process-head,
+.m4l-process .m4l-process-inner,
+.m4l-portfolio .m4l-portfolio-head,
+.m4l-portfolio .m4l-portfolio-slider,
+.m4l-clients .m4l-clients-head,
+.m4l-clients .clients-marquee,
+.m4l-contact .section-title,
+.m4l-contact .section-sub,
+.m4l-contact .contact-text,
+.m4l-contact .contact-right {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* 화면 안으로 들어왔을 때 공통 상태 */
+.hero.is-visible .hero-content,
+.hero.is-visible .scroll-down,
+.m4l-labs.is-visible .m4l-labs-tabs,
+.m4l-labs.is-visible .m4l-lab-slide.is-active .m4l-lab-media,
+.m4l-labs.is-visible .m4l-lab-slide.is-active .m4l-lab-content,
+.m4l-process.is-visible .m4l-process-head,
+.m4l-process.is-visible .m4l-process-inner,
+.m4l-portfolio.is-visible .m4l-portfolio-head,
+.m4l-portfolio.is-visible .m4l-portfolio-slider,
+.m4l-clients.is-visible .m4l-clients-head,
+.m4l-clients.is-visible .clients-marquee,
+.m4l-contact.is-visible .section-title,
+.m4l-contact.is-visible .section-sub,
+.m4l-contact.is-visible .contact-text,
+.m4l-contact.is-visible .contact-right {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* -------------------------
+   HERO 안에서 살짝 스태거
+   ------------------------- */
+.hero .hero-title {
+  transition-delay: 0s;
+}
+.hero .hero-desc {
+  transition-delay: 0.15s;
+}
+.hero .hero-cta {
+  transition-delay: 0.3s;
+}
+.hero .scroll-down {
+  transition-delay: 0.45s;
+}
+/* -------------------------
+   PORTFOLIO – 제목 → 슬라이더
+   ------------------------- */
+.m4l-portfolio .m4l-portfolio-head {
+  transition-delay: 0s;
+}
+.m4l-portfolio .m4l-portfolio-slider {
+  transition-delay: 0.2s;
+}
+
+/* 카드 등장시 약간 줌인 느낌 */
+.m4l-portfolio .portfolio-card {
+  transform: scale(0.97);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+}
+.m4l-portfolio.is-visible .portfolio-card {
+  transform: scale(1);
+}
+
+/* -------------------------
+   CLIENTS – 타이틀 → 로고 마키
+   ------------------------- */
+.m4l-clients .m4l-clients-head {
+  transition-delay: 0s;
+}
+.m4l-clients .clients-marquee {
+  transition-delay: 0.2s;
+}
+
+/* -------------------------
+   CONTACT – 좌측 텍스트 + 우측 폼
+   ------------------------- */
+.m4l-contact .section-title {
+  transition-delay: 0s;
+}
+.m4l-contact .section-sub {
+  transition-delay: 0.12s;
+}
+.m4l-contact .contact-text {
+  transition-delay: 0.24s;
+}
+.m4l-contact .contact-right {
+  transition-delay: 0.36s;
+}
+
+/* 🔁 LABS 탭: 항상 가운데 정렬 + 리빌 효과 유지 */
+.m4l-labs .m4l-labs-tabs {
+  opacity: 0;
+  /* X축 -50%로 가운데 정렬 유지 + Y축만 살짝 아래에서 시작 */
+  transform: translate3d(-50%, 24px, 0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.m4l-labs.is-visible .m4l-labs-tabs {
+  opacity: 1;
+  /* X축 -50%는 그대로 두고 Y축만 0으로 */
+  transform: translate3d(-50%, 0, 0);
+}
