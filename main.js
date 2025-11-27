@@ -130,17 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
   renderPortfolio();
 });
 
-const tabs = document.querySelectorAll(".service-tab");
-const hiddenInput = document.getElementById("selectedService");
-
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    tabs.forEach((t) => t.classList.remove("active"));
-    tab.classList.add("active");
-    hiddenInput.value = tab.dataset.value;
-  });
-});
-
 // CONTACT – 연구소 선택 탭
 document.addEventListener("click", (e) => {
   const tab = e.target.closest(".contact-tab");
